@@ -1,0 +1,4 @@
+-r requirements.txt
+
+ipdb==0.13.13
+black==22.8.0
