@@ -1,4 +1,5 @@
 -r requirements.txt
 
 ipdb==0.13.13
+flake8>=3.9.2,<3.10
 black==22.8.0

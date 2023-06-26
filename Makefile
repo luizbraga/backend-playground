@@ -1,10 +1,19 @@
-.PHONY: up bash clean
+.PHONY: build lint up bash clean
+
+build:
+	docker-compose build
+
+lint:
+	docker-compose run --rm api sh -c "flake8"
+
+black:
+	docker-compose run --rm api sh -c "black ."
 
 up:
 	docker-compose up api
 
-bash:
-	docker-compose exec api bash
+test:
+	docker-compose run --rm api sh -c "python manage.py test"
 
 clean:
 	find . -name '*.pyc' -delete
